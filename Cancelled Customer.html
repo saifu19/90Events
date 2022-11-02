@@ -1,0 +1,90 @@
+<div class="p-4">
+    <h5 id="heading-cancelled"  class="card-header">
+        Cancelled customers
+    </h5>
+    <div id="cancelled-accordion">
+        <div class="custom-card-body text-center">
+            <h5>Cancelled Tickets based on customers</h5>
+            <p>
+                List of Customers who have cancelled tickets are displayed. This report is based on orders that have different dates. Therefore, a customer can be shown multiple times by the tickets that they cancelled on different dates.
+            </p>
+            <div class="input-group justify-content-center">
+                <input type="text" class="form-control searchbar" placeholder="Name, Ticket Number, Customer ID or Phone">
+                <button class="btn btn-outline-primary">Search</button>
+            </div>
+            
+            <!-- Cacnelled Customers Table -->
+            <div class="d-flex justify-content-end mt-3">
+                <label for="cancelled-enteries">Show</label>
+                <input class="mx-2 cancelled-total-enteries enteries" min="1" type="number" value="2" data="cancelled-total">
+                <label for="cancelled-enteries">enteries</label>
+            </div>
+
+            <table id="cancelled-total" class="table table-fix table-striped">
+                <tbody>
+                    <thead>
+                        <th>#</th>
+                        <th>Customer ID</th>
+                        <th>Name</th>
+                        <th>Show</th>
+                        <th>No. Of Seats</th>
+                        <th>Total Amount</th>
+                        <th>Ticket No.</th>
+                        <th>Purchased Date</th>
+                        <th>Phone</th>
+                    </thead>
+                    <tr>
+                        <td>
+                            <svg class="c-pointer" xmlns="http://www.w3.org/2000/svg" width="16px" viewBox="0 0 576 512"><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+                        </td>
+                        <td>01144</td>
+                        <td>OZZIE EKREN</td>
+                        <td>NJ/TOLGSHOW</td>
+                        <td>01</td>
+                        <td>$232.00</td>
+                        <td>1DMJKHFKDS7987</td>
+                        <td>Monday, 24 Oct 2022</td>
+                        <td>4389-438984</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <svg class="c-pointer" xmlns="http://www.w3.org/2000/svg" width="16px" viewBox="0 0 576 512"><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+                        </td>
+                        <td>01144</td>
+                        <td>OZZIE EKREN</td>
+                        <td>NJ/TOLGSHOW</td>
+                        <td>02</td>
+                        <td>$232.00</td>
+                        <td>1DMJKHFKDS7987</td>
+                        <td>Monday, 24 Oct 2022</td>
+                        <td>4389-438984</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <svg class="c-pointer" xmlns="http://www.w3.org/2000/svg" width="16px" viewBox="0 0 576 512"><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg>
+                        </td>
+                        <td>01144</td>
+                        <td>OZZIE EKREN</td>
+                        <td>NJ/TOLGSHOW</td>
+                        <td>03</td>
+                        <td>$232.00</td>
+                        <td>1DMJKHFKDS7987</td>
+                        <td>Monday, 24 Oct 2022</td>
+                        <td>4389-438984</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between mt-3">
+                <p class="text-gray cancelled-total-count">Showing 1 to 5 enteries</p>
+                <div class="d-flex">
+                    <button id="cancelled-total-prev" class="btn btn-outline-purple me-2 prev" data="cancelled-total"> < </button>
+                    <div id="cancelled-total-nav">
+                        <!-- <button class="btn btn-purple"> 1 </button> -->
+                    </div>
+                    <button id="cancelled-total-next" class="btn btn-outline-purple next" data="cancelled-total"> > </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

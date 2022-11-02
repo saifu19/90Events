@@ -1,0 +1,87 @@
+<div class="p-4">
+    <h5 id="heading-booking" class="card-header">
+        Bookings Total
+    </h5>
+    <div id="bookings">
+        <div class="custom-card-body py-3">
+            <div class="d-flex justify-content-end">
+                <label for="bookings-enteries">Show</label>
+                <input class="mx-2 bookings-total-enteries enteries" type="number" min="1" value="5" data="bookings-total">
+                <label for="bookings-enteries">enteries</label>
+            </div>
+
+            <table id="bookings-total" class="table table-striped table-fix mt-3">
+                <tbody>
+                    <thead>
+                        <th>Booking status</th>
+                        <th>Today</th>
+                        <th>This month</th>
+                        <th>This year</th>
+                        <th>All time</th>
+                    </thead>
+                    
+                    <tr>
+                        <td class="fw-bold">Cancelled by Admin</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">Cancelled by Customer</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$7803</td>
+                        <td>$7803</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">Completed</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$123,572</td>
+                        <td>$123,572</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">Expired</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$123,572</td>
+                        <td>$140,266</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">Missing Payment</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$13,820</td>
+                        <td>$13,820</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">Rejected</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">Sold out</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between mt-3">
+                <p class="bookings-total-count text-gray">Showing 1 to 5 enteries</p>
+                <div class="d-flex">
+                    <button id="bookings-total-prev" class="btn btn-outline-purple me-2 prev" data="bookings-total"> < </button>
+                    <div id="bookings-total-nav">
+                    </div>
+                    <button id="bookings-total-next" class="btn btn-outline-purple next" data="bookings-total"> > </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
