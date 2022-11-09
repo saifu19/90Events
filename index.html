@@ -20,6 +20,11 @@
     <style>
         body {
             font-family: 'Montserrat', serif;
+            background-color: #F9F9F9 !important;
+        }
+        canvas {
+            /* height: 500px !important; */
+            width: 65vw !important;
         }
     </style>
     <body>
@@ -70,67 +75,72 @@
                             <div class="col-6 col-sm-3">
                                 <div class="container-fluid me-2 c-card py-2" style="background-color: #a38bc5;">
                                     <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h4 class="mb-0 c-card-title">
-                                                    143
-                                                </h4>
-                                                <p class="mb-0">Events</p>
-                                            </div>
-                                            <div>
-                                                <img class="cards-2" src="mic.png" height="80">
-                                            </div>
+                                        <div>
+                                            <h4 class="mb-0 c-card-title">
+                                                143
+                                            </h4>
+                                            <p class="mb-0">Events</p>
+                                        </div>
+                                        <div>
+                                            <img class="cards-2" src="mic.png" height="80">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6 col-sm-3">
-                                    <div class="container-fluid me-2 c-card py-2" style="background-color: #ff85be;">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h4 class="mb-0 c-card-title">
-                                                    34
-                                                </h4>
-                                                <p class="mb-0">Rates</p>
-                                            </div>
-                                            <div>
-                                                <img class="cards-2" src="bulb.png" height="80">
-                                            </div>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <div class="container-fluid me-2 c-card py-2" style="background-color: #ff85be;">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h4 class="mb-0 c-card-title">
+                                                34
+                                            </h4>
+                                            <p class="mb-0">Rates</p>
+                                        </div>
+                                        <div>
+                                            <img class="cards-2" src="bulb.png" height="80">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6 col-sm-3">
-                                    <div class="container-fluid me-2 c-card py-2" style="background-color: #6ab8f8;">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h4 class="mb-0 c-card-title">
-                                                    24
-                                                </h4>
-                                                <p class="mb-0">Customers</p>
-                                            </div>
-                                            <div>
-                                                <img class="cards-2" src="person.png" height="80">
-                                            </div>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <div class="container-fluid me-2 c-card py-2" style="background-color: #6ab8f8;">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h4 class="mb-0 c-card-title">
+                                                24
+                                            </h4>
+                                            <p class="mb-0">Customers</p>
+                                        </div>
+                                        <div>
+                                            <img class="cards-2" src="person.png" height="80">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6 col-sm-3">
-                                    <div class="container-fluid c-card py-2" style="background-color: #ffc95c;">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h4 class="mb-0 c-card-title">
-                                                    34
-                                                </h4>
-                                                <p class="mb-0">Bookings</p>
-                                            </div>
-                                            <div>
-                                                <img class="cards-2" src="money.png" height="80">
-                                            </div>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <div class="container-fluid c-card py-2" style="background-color: #ffc95c;">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h4 class="mb-0 c-card-title">
+                                                34
+                                            </h4>
+                                            <p class="mb-0">Bookings</p>
+                                        </div>
+                                        <div>
+                                            <img class="cards-2" src="money.png" height="80">
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         </div>
         
                     </div>
                     
+                </div>
+
+                <!-- Graph -->
+                <div class="d-flex justify-content-center canvas">
+                    <canvas id="booking-graph" class="graph my-5"></canvas>
                 </div>
 
                 <!-- Table Container -->
@@ -141,7 +151,42 @@
 
         <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
+            function chart(d, l, title, bg, border) {
+                const ctx = $(".graph");
+                // Make this dynamic by manipulating labels and data
+                const myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        // labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                        labels: l,
+                        datasets: [{
+                            label: title,
+                            // data: [12, 19, 2, 5, 2, 19, 12],
+                            data: d,
+                            // backgroundColor: [
+                            //     'rgba(255, 99, 132, 0.2)',
+                            // ],
+                            backgroundColor: bg,
+                            borderColor: border,
+                            // borderColor: [
+                            //     'rgba(255, 99, 132, 1)',
+                            // ],
+                            borderWidth: 1,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+
             document.addEventListener('contextmenu', event => event.preventDefault());
             document.onkeydown = function(e) {
                 if (e.ctrlKey && 
@@ -166,6 +211,15 @@
             });
 
             $(document).ready(function() {
+
+                // Connect data and labels to database to make graphs dynamic
+                data = [12, 19, 2, 5, 2, 19, 12];
+                labels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                title = 'Completed Bookings';
+                backgroundColor = ['rgba(24, 142, 247, 0.6)'];
+                borderColor = ['rgba(24, 142, 247, 1)'];
+
+                chart(data, labels, title, backgroundColor, borderColor);
                 table = "Booking.html";
                 $(".table-div").load(table, function() {
                     fixRows($(this).children().find(".table-fix").attr("id"));
@@ -174,6 +228,22 @@
             })
 
             $(".side-link").on('click', function() {
+                // Use page name with if else to render data from database
+                $(".graph").remove();
+                var page = $(this).children().html();
+                if(page.indexOf("Bulk SMS") != 0 && page.indexOf("New Transaction") != 0) {
+                    if(page.indexOf("Home") == 0) {
+                        page = "Completed Bookings";
+                    }
+                    $(".canvas").append('<canvas id="booking-graph" class="graph my-5"></canvas>');
+                    data = [5, 12, 4, 9, 10];
+                    labels = ['January', 'Feb', 'March', 'April', 'May'];
+                    title = page;
+                    backgroundColor = 'rgba(255, 0, 0, 0.6)';
+                    borderColor = 'rgba(255, 0, 0, 1)';
+                    chart(data, labels, title, backgroundColor, borderColor);
+                }
+
                 var table = $(this).children(".link-button").attr("data");
                 $(".table-div").load(table, function() {
                     fixRows($(this).children().find(".table-fix").attr("id"));
@@ -183,6 +253,7 @@
                     $(this).removeClass("active");
                 })
                 $(this).addClass("active");
+                return false;
             })
 
             function bindButtons(id) {
@@ -234,12 +305,6 @@
                     return (rowsShown)
                 }
             }
-
-            $(document).ready(function(){
-                $('.table-fix').each(function() {
-                    fixRows($(this).attr('id'));
-                })
-            });
             
             function enteries(element) {
                 var id = element.attr("data");
